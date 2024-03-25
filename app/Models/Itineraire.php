@@ -14,6 +14,8 @@ class Itineraire extends Model
         'titre',
         'categorie',
         'image',
+        'debut',
+        'fin',
         'duree',
         'user_id',
     ];

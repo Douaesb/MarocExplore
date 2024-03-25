@@ -15,5 +15,6 @@ class Destination extends Model
         'logement',
         'liste',
         'itineraire_id',
+        
     ];
 }
