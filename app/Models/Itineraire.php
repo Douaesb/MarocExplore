@@ -19,4 +19,10 @@ class Itineraire extends Model
         'duree',
         'user_id',
     ];
+
+    public function destinations()
+{
+    return $this->hasMany(Destination::class);
+}
+
 }
