@@ -1,6 +1,7 @@
 <?php
 
 use App\Http\Controllers\AuthController;
+use App\Http\Controllers\ItineraireController;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
 
@@ -23,3 +24,12 @@ Route::post('register',[AuthController::class,'register']);
 Route::post('login', [AuthController::class,'login']);
 Route::post('logout', [AuthController::class,'logout']);
 Route::post('refresh', [AuthController::class,'refresh']);
+Route::middleware('auth:api')->post('itineraire', [ItineraireController::class, 'store']);
+Route::middleware('auth:api')->get('itinerairee', [ItineraireController::class, 'index']);
+Route::get('itineraires', [ItineraireController::class, 'indexAll']);
+Route::get('itineraires/search', [ItineraireController::class, 'searchByTitre']);
+Route::get('itineraires/filter', [ItineraireController::class, 'filter']);
+Route::middleware('auth:api')->delete('itineraires/{id}', [ItineraireController::class, 'destroy']);
+Route::middleware('auth:api')->put('itineraires/update/{id}', [ItineraireController::class, 'update']);
+Route::middleware('auth:api')->post('liste-a-visualiser/{itineraireId}', [ItineraireController::class, 'StoreListeAvisiter']);
+Route::middleware('auth:api')->get('liste-a-visualiser', [ItineraireController::class, 'DisplayListeAvisiter']);

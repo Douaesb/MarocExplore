@@ -56,4 +56,15 @@ class User extends Authenticatable implements JWTSubject
         'name'=>$this->name
       ];
     }
+
+    public function itineraires()
+{
+    return $this->hasMany(Itineraire::class);
+}
+
+public function itineraire()
+{
+    return $this->belongsToMany(Itineraire::class);
+}
+
 }
