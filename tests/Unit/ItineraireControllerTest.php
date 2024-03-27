@@ -20,7 +20,7 @@ class ItineraireControllerTest extends TestCase
         $token = JWTAuth::fromUser($user);
 
         $requestData = [
-            'titre' => 'Test Itineraire',
+            'titre' => 'Itineraire 1',
             'categorie' => 'Test Category',
             'image' => 'example_img',
             'debut' => 'test1',
