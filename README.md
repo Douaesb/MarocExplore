@@ -23,7 +23,7 @@ Bienvenue dans l'API MarocExplore, qui fournit des fonctionnalités pour explore
 
 6. **Démarrage du serveur** : Exécutez `php artisan serve` pour démarrer le serveur de développement.
 
-7. **Documentation** : Consultez la documentation de l'API dans le fichier `API_DOCUMENTATION.md` pour obtenir des instructions détaillées sur l'utilisation des endpoints.
+7. **Documentation** : Consultez la documentation de l'API dans le fichier `MarocExploreApi.postman_collection.json` pour obtenir des instructions détaillées sur l'utilisation des endpoints.
 
 ## Contributions
 
