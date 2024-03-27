@@ -5,23 +5,19 @@ namespace Tests\Unit;
 use Tests\TestCase;
 use App\Models\User;
 use PHPOpenSourceSaver\JWTAuth\Facades\JWTAuth;
-use Faker\Factory as Faker;
-
 
 class AuthControllerTest extends TestCase
 {
     public function testRegister()
     {
-        $faker = Faker::create();
-    
         $userData = [
-            'name' => $faker->name(),
-            'email' => $faker->unique()->safeEmail(),
-            'password' => 'password123', 
+            'name' => 'John Doe',
+            'email' => 'john@example.com',
+            'password' => 'john123',
         ];
-    
+
         $response = $this->postJson('/api/register', $userData);
-    
+
         $response->assertStatus(200)
                  ->assertJson([
                      'status' => 'success',
@@ -30,9 +26,10 @@ class AuthControllerTest extends TestCase
                          'type' => 'bearer',
                      ],
                  ]);
-    
-        $this->assertDatabaseHas('users', ['email' => $userData['email']]);
+
+        $this->assertDatabaseHas('users', ['email' => 'john@example.com']);
     }
+
     public function testLogin()
     {
         $userData = [

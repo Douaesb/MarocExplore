@@ -229,7 +229,7 @@ class ItineraireController extends Controller
 
             return response()->json([
                 'status' => 'success',
-                'message' => 'Itinéraire avec ses destinations créé avec succès',
+                'message' => 'Itinéraire avec ses destinations modifié avec succès',
                 'itineraire' => $itineraire,
             ]);
         } catch (\Exception $e) {
